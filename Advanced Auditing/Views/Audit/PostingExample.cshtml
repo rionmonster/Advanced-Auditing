@@ -1,0 +1,36 @@
+﻿@model Advanced_Auditing.Models.PostingModel
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Creating a Posting Example</title>
+</head>
+<body>
+    @using (Html.BeginForm()) {
+        @Html.ValidationSummary(true)
+  
+        <fieldset>
+            <legend>Posting Example</legend>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.PropertyA)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.PropertyA)
+                @Html.ValidationMessageFor(model => model.PropertyA)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.PropertyB)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.PropertyB)
+                @Html.ValidationMessageFor(model => model.PropertyB)
+            </div>
+            <p>
+                <input type="submit" value="Create" />
+            </p>
+        </fieldset>
+    }
+</body>
+</html>
